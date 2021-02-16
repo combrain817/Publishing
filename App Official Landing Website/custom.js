@@ -16,5 +16,16 @@ $(() => {
         speed: 100,
         autoStart: true,
         breakLines: false,
+    });
+})
+
+/* Faq Accordion */
+$(function(){
+    $('.faq-desc').eq(0).show()
+    $('.faq-title').click(function(){
+        $(this).next().stop().slideDown()
+        $(this).parent().siblings().children('.faq-desc').stop().slideUp()
+        $(this).parent().addClass('active')
+        $(this).parent().siblings().removeClass('active')
     })
 })
