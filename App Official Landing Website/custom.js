@@ -1,5 +1,5 @@
-$(() => {
-    /*Slick Slider - Welcome*/
+$(function(){
+    /* Slick Slider - Welcome */
     $('.slideshow').slick({
         infinite: true,
         dots: false,
@@ -10,9 +10,17 @@ $(() => {
         pauseOnHover: false
     });
 
-    /*TypeIt -welcome*/
+    /* Slick - Review */
+    $('.review-slider').slick({
+        infinite: true,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+    });
+
+    /* TypeIt - Welcome */
     $('#typing').typeIt({
-        strings: ['Business strategy.', 'Innovation Plan.', 'Creative Idea.' ],
+        strings: ["Business strategy.", "Innovation Plan.", "Creative Idea."],
         speed: 100,
         autoStart: true,
         breakLines: false,
