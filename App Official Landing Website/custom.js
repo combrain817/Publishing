@@ -11,7 +11,7 @@ $(function(){
     });
 
     /* Slick - Review */
-    $('.review-slider').slick({
+    $('.review-slider, .mockup-slider').slick({
         infinite: true,
         dots: true,
         autoplay: true,
@@ -35,5 +35,15 @@ $(function(){
         $(this).parent().siblings().children('.faq-desc').stop().slideUp()
         $(this).parent().addClass('active')
         $(this).parent().siblings().removeClass('active')
+    })
+
+    /*Video Modal*/
+    $('.open-modal').click(() => {
+        $('.video-modal').fadeIn();
+        $('body').addClass('active');
+    })
+    $('.close-modal').click(() => {
+        $('.video-modal').fadeOut();
+        $('body').removeClass('active');
     })
 })
