@@ -16,20 +16,6 @@
     font-style: normal;
 }
 
-/* Seciton Display */
- /*header { display: none; }
-.welcome { display: none; }
-.ceo-access { display: none; }
-.banner { display: none; }
-.feature { display: none; }
-.vision { display: none; }
-.faq { display: none; }
-.review { display: none; }
-.focus { display: none; }
-.guide { display: none; }
-.news { display: none; }
-footer { display: none; }*/
-
 /* Reset CSS */
 * {
     box-sizing: border-box;
@@ -48,6 +34,9 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* Default CSS */
+html {
+    scroll-behavior: smooth;  /*부드럽게 앵커태그로 이동*/
+}
 body {
     font-family: 'NEXON Lv2 Gothic', sans-serif;
     font-size: 18px;
@@ -60,7 +49,7 @@ body.active {
     overflow: hidden;
 }
 section {
-    padding: 100px 0;
+    padding: 130px 0;
 }
 
 /* Common CSS */
@@ -86,11 +75,34 @@ section {
     font-size: 20px;
 }
 
+.btn-top {
+    position: fixed;
+    border: 1px solid #000;
+    right: 20px;
+    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    line-height: 42;
+    text-align: center;
+    transition: 0.5s;
+}
+.btn-top.active {
+    bottom: 20px;
+}
+
 /* ####################### Header ####################### */
 header {
     position: fixed;
     width: 100%;
-    /*z-index: 10;*/
+    z-index: 10;
+    transition: 0.5s;
+}
+header.active {
+    background-color: #ffffff;
+    box-shadow: 0 3px 5px rgba(0 ,0 ,0 ,0.05);
 }
 .header-inner {
     width: 1300px;
@@ -118,6 +130,7 @@ header {
     /* border: 5px solid #000; */
     height: 90vh;
     position: relative;
+    padding: 0;
 }
 .slideshow {}
 .welcome-heading {
@@ -203,7 +216,9 @@ header {
 }
 
 /* ################# section : ceo-access ################# */
-.ceo-access {}
+.ceo-access {
+    padding-bottom: 0;
+}
 .ceo-inner,
 .access-inner {
     width: 1300px;
@@ -285,6 +300,7 @@ header {
     /* background: linear-gradient(to right, #69acfe, #6eaefd); */
     background: url(images/wave-line.png) no-repeat center right 100px, linear-gradient(to right, #69acfe, #6eaefd);
     background-size: 80px;
+    padding: 0;
 }
 .banner-inner {
     width: 1300px;
@@ -385,7 +401,10 @@ input[id=tab3]:checked ~ .tab-btn label[for=tab3] span {
 }
 
 /* ################# section : vision ################# */
-.vision {}
+.vision {
+    padding-bottom: 0;
+    padding-top: 150px;
+}
 .vision-inner {}
 .vision-content {
     overflow: hidden;
@@ -584,7 +603,9 @@ h1.slogan {
 }
 
 /* ################# section : guide ################# */
-.guide {}
+.guide {
+    padding-top: 0;
+}
 .guide-inner {
     width: 1300px;
     margin: auto;
@@ -806,7 +827,6 @@ footer {
 .copyright{
     width: 85%;
 }
-
 .footer-logo img {
     filter: grayscale(1);
 }
@@ -873,6 +893,7 @@ footer {
     top: 0;
     left: 0;
     display: none;
+    z-index: 100;
 }
 .close-modal {
     color: #fff;
@@ -944,4 +965,49 @@ footer {
 
 .mockup-slider .slick-dots li {
     margin: 0;
+}
+
+/* ▦▦▦▦▦▦▦▦▦ Scroll Reveal CSS ▦▦▦▦▦▦▦▦▦ */
+.ltr {
+    animation: ltr 0.5s linear both;
+}
+.rtl {
+    animation: rtl 0.5s linear both;
+}
+.utd {
+    animation: utd 0.5s linear both;
+}
+
+@keyframes ltr {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rtl {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes utd {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
