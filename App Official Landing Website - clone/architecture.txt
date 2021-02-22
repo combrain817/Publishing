@@ -1,0 +1,27 @@
+.container
+    header
+        .header-wrapper
+            .logo
+                .img
+            nav.gnb
+                ul
+                    li * 7
+                        a
+
+    section.welcome
+         .carousel
+            .show
+                img
+            .slide * n
+                img
+            .left-btn
+            .right-btn
+
+         .welcome-contents
+            h1
+                em
+                    strong
+            p
+            .btn-group
+                button.blue
+                button
